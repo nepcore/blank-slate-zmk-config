@@ -79,7 +79,7 @@
         us_adjust_layer {
             label = "Adjust US";
             bindings = <
-&soft_off   &bootloader      &trans     &kp EN_EURO  &trans     &trans     &trans  &kp EN_U_UMLAUT  &trans  &kp EN_O_UMLAUT  &trans  &kp DEL
+&trans      &bootloader      &trans     &kp EN_EURO  &trans     &trans     &trans  &kp EN_U_UMLAUT  &trans  &kp EN_O_UMLAUT  &trans  &kp DEL
 &bt BT_CLR  &kp EN_A_UMLAUT  &kp EN_SZ  &trans       &trans     &trans     &trans  &out OUT_TOG     &trans  &tog DE_BASE_L   &trans  &trans
 &trans      &bt BT(0)        &bt BT(1)  &bt BT(2)    &bt BT(3)  &bt BT(4)  &trans  &trans           &trans  &trans           &trans  &trans
 &trans      &trans           &trans     &trans       &trans            &trans      &trans           &trans  &trans           &trans  &trans
@@ -119,7 +119,7 @@
         de_adjust_layer {
             label = "Adjust DE";
             bindings = <
-&soft_off    &bootloader      &trans     &kp DE_EURO  &trans  &trans  &trans  &kp DE_U_UMLAUT  &trans  &kp DE_O_UMLAUT  &trans  &kp DEL
+&trans       &bootloader      &trans     &kp DE_EURO  &trans  &trans  &trans  &kp DE_U_UMLAUT  &trans  &kp DE_O_UMLAUT  &trans  &kp DEL
 &trans       &kp DE_A_UMLAUT  &kp DE_SZ  &trans       &trans  &trans  &trans  &out OUT_TOG     &trans  &tog DE_BASE_L   &trans  &trans
 &trans       &trans           &trans     &trans       &trans  &trans  &trans  &trans           &trans  &trans           &trans  &trans
 &trans       &trans           &trans     &trans       &trans      &trans      &trans           &trans  &trans           &trans  &trans
