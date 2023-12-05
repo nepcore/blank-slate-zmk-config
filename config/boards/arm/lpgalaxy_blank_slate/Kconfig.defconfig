@@ -28,7 +28,4 @@ config ZMK_BLE
 config ZMK_USB
 	default y
 
-config ZMK_HID_REPORT_TYPE_NKRO
-	default y
-
 endif # BOARD_LPGALAXY_BLANK_SLATE
