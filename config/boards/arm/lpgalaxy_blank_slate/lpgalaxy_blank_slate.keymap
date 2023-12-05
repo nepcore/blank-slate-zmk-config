@@ -35,15 +35,12 @@
 
     cond_layers {
         compatible = "zmk,conditional-layers";
-	    tri {
+	    tri_us {
 	        if-layers = <US_LOWER_L US_RAISE_L>;
 	        then-layer = <US_ADJUST_L>;
         };
-    };
 
-    cond_layers {
-        compatible = "zmk,conditional-layers";
-	    tri {
+	    tri_de {
 	        if-layers = <DE_LOWER_L DE_RAISE_L>;
 	        then-layer = <DE_ADJUST_L>;
         };
