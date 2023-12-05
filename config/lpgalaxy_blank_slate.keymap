@@ -69,10 +69,10 @@
         us_raise_layer {
             label = "Raise US";
             bindings = <
-&kp EN_GRAVE  &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp EN_N4  &kp EN_N5  &kp EN_N6  &kp EN_N7     &kp EN_N8      &kp EN_N9     &kp EN_N0     &trans
-&kp DEL       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp EN_MINUS  &kp EN_EQUALS  &kp EN_LBKT   &kp EN_RBKT   &kp EN_BSLH
-&trans        &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12    &trans        &trans         &kp PG_UP     &kp PG_DN     &trans
-&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT     &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PLAY
+&kp EN_GRAVE  &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp EN_N4  &kp EN_N5  &kp EN_N6  &kp EN_N7     &kp EN_N8     &kp EN_N9     &kp EN_N0     &trans
+&kp DEL       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp EN_MINUS  &kp EN_EQUAL  &kp EN_LBKT   &kp EN_RBKT   &kp EN_BSLH
+&trans        &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12    &trans        &trans        &kp PG_UP     &kp PG_DN     &trans
+&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT    &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PLAY
             >;
         };
 
@@ -109,10 +109,10 @@
         de_raise_layer {
             label = "Raise DE";
             bindings = <
-&kp DE_GRAVE  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp DE_N7     &kp DE_N8      &kp DE_N9     &kp DE_N0     &trans
-&kp DEL       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp DE_MINUS  &kp DE_EQUALS  &kp DE_LBKT   &kp DE_RBKT   &kp DE_BSLH
-&trans        &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12    &trans        &trans         &kp PG_UP     &kp PG_DN     &trans
-&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT     &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PLAY
+&kp DE_GRAVE  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp DE_N7     &kp DE_N8     &kp DE_N9     &kp DE_N0     &trans
+&kp DEL       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp DE_MINUS  &kp DE_EQUAL  &kp DE_LBKT   &kp DE_RBKT   &kp DE_BSLH
+&trans        &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12    &trans        &trans        &kp PG_UP     &kp PG_DN     &trans
+&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT    &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PLAY
             >;
         };
 
