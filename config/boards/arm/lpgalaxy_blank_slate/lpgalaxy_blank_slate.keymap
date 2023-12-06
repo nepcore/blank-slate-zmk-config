@@ -62,7 +62,7 @@
 &kp EN_TILDE  &kp EN_EXCL  &kp EN_AT  &kp EN_HASH  &kp EN_DLLR  &kp EN_PRCNT  &kp EN_CARET  &kp EN_AMPS   &kp EN_STAR  &kp EN_LPAR   &kp EN_RPAR   &trans
 &kp DEL       &kp F1       &kp F2     &kp F3       &kp F4       &kp F5        &kp F6        &kp EN_UNDER  &kp EN_PLUS  &kp EN_LBRC   &kp EN_RBRC   &kp EN_PIPE
 &trans        &kp F7       &kp F8     &kp F9       &kp F10      &kp F11       &kp F12       &trans        &trans       &kp HOME      &kp END       &trans
-&trans        &trans       &trans     &trans       &trans              &trans               &trans        &kp C_NEXT   &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PLAY
+&trans        &trans       &trans     &trans       &trans              &trans               &trans        &kp C_NEXT   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
             >;
         };
 
@@ -72,7 +72,7 @@
 &kp EN_GRAVE  &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp EN_N4  &kp EN_N5  &kp EN_N6  &kp EN_N7     &kp EN_N8     &kp EN_N9     &kp EN_N0     &trans
 &kp DEL       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp EN_MINUS  &kp EN_EQUAL  &kp EN_LBKT   &kp EN_RBKT   &kp EN_BSLH
 &trans        &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12    &trans        &trans        &kp PG_UP     &kp PG_DN     &trans
-&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT    &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PLAY
+&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
             >;
         };
 
@@ -102,7 +102,7 @@
 &kp DE_TILDE  &kp DE_EXCL  &kp DE_AT  &kp DE_HASH  &kp DE_DLLR  &kp DE_PRCNT  &kp DE_CARET  &kp DE_AMPS   &kp DE_STAR  &kp DE_LPAR   &kp DE_RPAR   &trans
 &kp DEL       &kp F1       &kp F2     &kp F3       &kp F4       &kp F5        &kp F6        &kp DE_UNDER  &kp DE_PLUS  &kp DE_LBRC   &kp DE_RBRC   &kp DE_PIPE
 &trans        &kp F7       &kp F8     &kp F9       &kp F10      &kp F11       &kp F12       &trans        &trans       &kp HOME      &kp END       &trans
-&trans        &trans       &trans     &trans       &trans              &trans               &trans        &kp C_NEXT   &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PLAY
+&trans        &trans       &trans     &trans       &trans              &trans               &trans        &kp C_NEXT   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
             >;
         };
 
@@ -112,7 +112,7 @@
 &kp DE_GRAVE  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp DE_N7     &kp DE_N8     &kp DE_N9     &kp DE_N0     &trans
 &kp DEL       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp DE_MINUS  &kp DE_EQUAL  &kp DE_LBKT   &kp DE_RBKT   &kp DE_BSLH
 &trans        &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12    &trans        &trans        &kp PG_UP     &kp PG_DN     &trans
-&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT    &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PLAY
+&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
             >;
         };
 
