@@ -14,32 +14,38 @@
 #define US_BASE_L 0
 #define US_LOWER_L 1
 #define US_RAISE_L 2
-#define US_ADJUST_L 3
-#define DE_BASE_L 4
-#define DE_LOWER_L 5
-#define DE_RAISE_L 6
-#define DE_ADJUST_L 7
+#define US_SPECIAL_L 3
+#define US_FUNC_L 4
+#define DE_BASE_L 5
+#define DE_LOWER_L 6
+#define DE_RAISE_L 7
+#define DE_SPECIAL_L 8
+#define DE_FUNC_L 9
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 
-#define BT(n) BT_SEL n
+#define BTS(n) BT_SEL n
+#define BTD(n) BT_DISC n
+
+#define CURR_L &trans
+#define DIS_L &none
 
 / {
     chosen {
-       zmk,matrix_transform = &mit_transform;
+       zmk,matrix_transform = &ortho_transform;
     };
 
     cond_layers {
         compatible = "zmk,conditional-layers";
-	    tri_us {
+	    special_us {
 	        if-layers = <US_LOWER_L US_RAISE_L>;
-	        then-layer = <US_ADJUST_L>;
+	        then-layer = <US_SPECIAL_L>;
         };
 
-	    tri_de {
+	    special_de {
 	        if-layers = <DE_LOWER_L DE_RAISE_L>;
-	        then-layer = <DE_ADJUST_L>;
+	        then-layer = <DE_SPECIAL_L>;
         };
     };
 
@@ -49,80 +55,100 @@
         us_base_layer {
             label = "Base US";
             bindings = <
-&kp TAB    &kp EN_Q   &kp EN_W  &kp EN_E  &kp EN_R        &kp EN_T  &kp EN_Y  &kp EN_U        &kp EN_I      &kp EN_O    &kp EN_P     &kp BKSP
-&kp ESC    &kp EN_A   &kp EN_S  &kp EN_D  &kp EN_F        &kp EN_G  &kp EN_H  &kp EN_J        &kp EN_K      &kp EN_L    &kp EN_SEMI  &kp EN_SQT
-&kp LSHFT  &kp EN_Z   &kp EN_X  &kp EN_C  &kp EN_V        &kp EN_B  &kp EN_N  &kp EN_M        &kp EN_COMMA  &kp EN_DOT  &kp EN_FSLH  &kp RET
-&kp RSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &mo US_LOWER_L     &kp EN_SPACE     &mo US_RAISE_L  &kp LEFT      &kp DOWN    &kp UP       &kp RIGHT
+&kp TAB    &kp EN_Q   &kp EN_W  &kp EN_E       &kp EN_R        &kp EN_T      &kp EN_Y  &kp EN_U        &kp EN_I      &kp EN_O    &kp EN_P     &kp DEL
+&kp ESC    &kp EN_A   &kp EN_S  &kp EN_D       &kp EN_F        &kp EN_G      &kp EN_H  &kp EN_J        &kp EN_K      &kp EN_L    &kp EN_SEMI  &kp EN_SQT
+&kp LSHFT  &kp EN_Z   &kp EN_X  &kp EN_C       &kp EN_V        &kp EN_B      &kp EN_N  &kp EN_M        &kp EN_COMMA  &kp EN_DOT  &kp EN_FSLH  &kp RET
+&kp LCTRL  &kp LALT   &kp LGUI  &mo US_FUNC_L  &mo US_LOWER_L  &kp EN_SPACE  &kp BKSP  &mo US_RAISE_L  &kp LEFT      &kp DOWN    &kp UP       &kp RIGHT
             >;
         };
 
         us_lower_layer {
             label = "Lower US";
             bindings = <
-&kp EN_TILDE  &kp EN_EXCL  &kp EN_AT  &kp EN_HASH  &kp EN_DLLR  &kp EN_PRCNT  &kp EN_CARET  &kp EN_AMPS   &kp EN_STAR  &kp EN_LPAR   &kp EN_RPAR   &trans
-&kp DEL       &kp F1       &kp F2     &kp F3       &kp F4       &kp F5        &kp F6        &kp EN_UNDER  &kp EN_PLUS  &kp EN_LBRC   &kp EN_RBRC   &kp EN_PIPE
-&trans        &kp F7       &kp F8     &kp F9       &kp F10      &kp F11       &kp F12       &trans        &trans       &kp HOME      &kp END       &trans
-&trans        &trans       &trans     &trans       &trans              &trans               &trans        &kp C_NEXT   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
+&trans  &none   &none        &kp EN_LBKT  &kp EN_RBKT  &kp EN_AT     &none        &kp EN_AMPS   &kp EN_STAR   &kp EN_PRCNT  &kp EN_CARET  &trans
+&trans  &none   &kp EN_EXCL  &kp EN_LPAR  &kp EN_RPAR  &kp EN_TILDE  &kp EN_PIPE  &kp EN_MINUS  &kp EN_EQUAL  &kp EN_DLLR   &kp HOME      &trans
+&trans  &none   &none        &kp EN_LBRC  &kp EN_RBRC  &kp EN_GRAVE  &kp EN_BSLH  &kp EN_UNDER  &kp EN_PLUS   &kp EN_HASH   &kp END       &trans
+&trans  &trans  &trans       DIS_L        CURR_L       &trans        &trans       &trans        &trans        &trans        &trans        &trans
             >;
         };
 
         us_raise_layer {
             label = "Raise US";
             bindings = <
-&kp EN_GRAVE  &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp EN_N4  &kp EN_N5  &kp EN_N6  &kp EN_N7     &kp EN_N8     &kp EN_N9     &kp EN_N0     &trans
-&kp DEL       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp EN_MINUS  &kp EN_EQUAL  &kp EN_LBKT   &kp EN_RBKT   &kp EN_BSLH
-&trans        &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12    &trans        &trans        &kp PG_UP     &kp PG_DN     &trans
-&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
+&trans  &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp EN_N4  &kp EN_N5  &kp EN_N6  &kp EN_N7  &kp EN_N8  &kp EN_N9  &kp EN_N0  &trans
+&trans  &none      &kp HOME   &kp UP     &kp END    &none      &none      &kp EN_N4  &kp EN_N5  &kp EN_N6  &kp PG_UP  &trans
+&trans  &none      &kp LEFT   &kp DOWN   &kp RIGHT  &none      &none      &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp PG_DN  &trans
+&trans  &trans     &trans     DIS_L      &trans     &trans     &trans     CURR_L     &kp EN_N0  &none      &none      &none
             >;
         };
 
-        us_adjust_layer {
-            label = "Adjust US";
+        us_special_layer {
+            label = "Special US";
             bindings = <
-&trans      &bootloader      &trans     &kp EN_EURO  &trans     &trans     &trans  &kp EN_U_UMLAUT  &trans  &kp EN_O_UMLAUT  &trans  &kp DEL
-&bt BT_CLR  &kp EN_A_UMLAUT  &kp EN_SZ  &trans       &trans     &trans     &trans  &out OUT_TOG     &trans  &tog DE_BASE_L   &trans  &trans
-&trans      &bt BT(0)        &bt BT(1)  &bt BT(2)    &bt BT(3)  &bt BT(4)  &trans  &trans           &trans  &trans           &trans  &trans
-&trans      &trans           &trans     &trans       &trans            &trans      &trans           &trans  &trans           &trans  &trans
+&tog DE_BASE_L  &kp EN_A_UMLAUT  &none      &kp EN_EURO  &none   &none   &kp EN_U_UMLAUT  &kp EN_U_UMLAUT  &none   &kp EN_O_UMLAUT  &kp EN_O_UMLAUT  &trans
+&trans          &kp EN_A_UMLAUT  &kp EN_SZ  &none        &none   &none   &none            &none            &none   &none            &none            &none
+&trans          &none            &none      &none        &none   &none   &none            &none            &none   &none            &none            &trans
+&trans          &trans           &trans     DIS_L        CURR_L  &trans  &trans           CURR_L           &trans  &trans           &trans           &trans
+            >;
+        };
+
+        us_func_layer {
+            label = "Function US";
+            bindings = <
+&kp F1       &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10       &kp F11       &kp F12
+&kp F13      &kp F14     &kp F15     &kp F16     &kp F17     &kp F18     &kp F19     &kp F20     &kp F21     &kp F22       &kp F23       &kp F24
+&bt BT_CLR   &bt BTS(0)  &bt BTS(1)  &bt BTS(2)  &bt BTS(3)  &bt BTS(4)  &bt BTD(0)  &bt BTD(1)  &bt BTD(2)  &bt BTD(3)    &bt BTD(4)    &out OUT_TOG
+&bootloader  &trans      &trans      CURR_L      DIS_L       &trans      &trans      DIS_L       &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
             >;
         };
 
         de_base_layer {
             label = "Base DE";
             bindings = <
-&kp TAB    &kp DE_Q   &kp DE_W  &kp DE_E  &kp DE_R        &kp DE_T  &kp DE_Y  &kp DE_U        &kp DE_I      &kp DE_O    &kp DE_P     &kp BKSP
-&kp ESC    &kp DE_A   &kp DE_S  &kp DE_D  &kp DE_F        &kp DE_G  &kp DE_H  &kp DE_J        &kp DE_K      &kp DE_L    &kp DE_SEMI  &kp DE_SQT
-&kp LSHFT  &kp DE_Z   &kp DE_X  &kp DE_C  &kp DE_V        &kp DE_B  &kp DE_N  &kp DE_M        &kp DE_COMMA  &kp DE_DOT  &kp DE_FSLH  &kp RET
-&kp RSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &mo DE_LOWER_L     &kp DE_SPACE     &mo DE_RAISE_L  &kp LEFT      &kp DOWN    &kp UP       &kp RIGHT
+&kp TAB    &kp DE_Q   &kp DE_W  &kp DE_E       &kp DE_R        &kp DE_T      &kp DE_Y  &kp DE_U        &kp DE_I      &kp DE_O    &kp DE_P     &kp DEL
+&kp ESC    &kp DE_A   &kp DE_S  &kp DE_D       &kp DE_F        &kp DE_G      &kp DE_H  &kp DE_J        &kp DE_K      &kp DE_L    &kp DE_SEMI  &kp DE_SQT
+&kp LSHFT  &kp DE_Z   &kp DE_X  &kp DE_C       &kp DE_V        &kp DE_B      &kp DE_N  &kp DE_M        &kp DE_COMMA  &kp DE_DOT  &kp DE_FSLH  &kp RET
+&kp LCTRL  &kp LALT   &kp LGUI  &mo DE_FUNC_L  &mo DE_LOWER_L  &kp DE_SPACE  &kp BKSP  &mo DE_RAISE_L  &kp LEFT      &kp DOWN    &kp UP       &kp RIGHT
             >;
         };
 
         de_lower_layer {
             label = "Lower DE";
             bindings = <
-&kp DE_TILDE  &kp DE_EXCL  &kp DE_AT  &kp DE_HASH  &kp DE_DLLR  &kp DE_PRCNT  &kp DE_CARET  &kp DE_AMPS   &kp DE_STAR  &kp DE_LPAR   &kp DE_RPAR   &trans
-&kp DEL       &kp F1       &kp F2     &kp F3       &kp F4       &kp F5        &kp F6        &kp DE_UNDER  &kp DE_PLUS  &kp DE_LBRC   &kp DE_RBRC   &kp DE_PIPE
-&trans        &kp F7       &kp F8     &kp F9       &kp F10      &kp F11       &kp F12       &trans        &trans       &kp HOME      &kp END       &trans
-&trans        &trans       &trans     &trans       &trans              &trans               &trans        &kp C_NEXT   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
+&trans  &none   &none        &kp DE_LBKT  &kp DE_RBKT  &kp DE_AT     &none        &kp DE_AMPS   &kp DE_STAR   &kp DE_PRCNT  &kp DE_CARET  &trans
+&trans  &none   &kp DE_EXCL  &kp DE_LPAR  &kp DE_RPAR  &kp DE_TILDE  &kp DE_PIPE  &kp DE_MINUS  &kp DE_EQUAL  &kp DE_DLLR   &kp HOME      &trans
+&trans  &none   &none        &kp DE_LBRC  &kp DE_RBRC  &kp DE_GRAVE  &kp DE_BSLH  &kp DE_UNDER  &kp DE_PLUS   &kp DE_HASH   &kp END       &trans
+&trans  &trans  &trans       DIS_L        CURR_L       &trans        &trans       &trans        &trans        &trans        &trans        &trans
             >;
         };
 
         de_raise_layer {
             label = "Raise DE";
             bindings = <
-&kp DE_GRAVE  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp DE_N7     &kp DE_N8     &kp DE_N9     &kp DE_N0     &trans
-&kp DEL       &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp DE_MINUS  &kp DE_EQUAL  &kp DE_LBKT   &kp DE_RBKT   &kp DE_BSLH
-&trans        &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12    &trans        &trans        &kp PG_UP     &kp PG_DN     &trans
-&trans        &trans     &trans     &trans     &trans           &trans          &trans        &kp C_NEXT    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
+&trans  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp DE_N7  &kp DE_N8  &kp DE_N9  &kp DE_N0  &trans
+&trans  &none      &kp HOME   &kp UP     &kp END    &none      &none      &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp PG_UP  &trans
+&trans  &none      &kp LEFT   &kp DOWN   &kp RIGHT  &none      &none      &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp PG_DN  &trans
+&trans  &trans     &trans     DIS_L      &trans     &trans     &trans     CURR_L     &kp DE_N0  &none      &none      &none
             >;
         };
 
-        de_adjust_layer {
-            label = "Adjust DE";
+        de_special_layer {
+            label = "Special DE";
             bindings = <
-&trans       &bootloader      &trans     &kp DE_EURO  &trans  &trans  &trans  &kp DE_U_UMLAUT  &trans  &kp DE_O_UMLAUT  &trans  &kp DEL
-&trans       &kp DE_A_UMLAUT  &kp DE_SZ  &trans       &trans  &trans  &trans  &out OUT_TOG     &trans  &tog DE_BASE_L   &trans  &trans
-&trans       &trans           &trans     &trans       &trans  &trans  &trans  &trans           &trans  &trans           &trans  &trans
-&trans       &trans           &trans     &trans       &trans      &trans      &trans           &trans  &trans           &trans  &trans
+&tog DE_BASE_L  &kp DE_A_UMLAUT  &none      &kp DE_EURO  &none   &none   &kp DE_U_UMLAUT  &kp DE_U_UMLAUT  &none   &kp DE_O_UMLAUT  &kp DE_O_UMLAUT  &trans
+&trans          &kp DE_A_UMLAUT  &kp DE_SZ  &none        &none   &none   &none            &none            &none   &none            &none            &none
+&trans          &none            &none      &none        &none   &none   &none            &none            &none   &none            &none            &trans
+&trans          &trans           &trans     DIS_L        CURR_L  &trans  &trans           CURR_L           &trans  &trans           &trans           &trans
+            >;
+        };
+
+        de_func_layer {
+            label = "Function DE";
+            bindings = <
+&kp F1       &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10       &kp F11       &kp F12
+&kp F13      &kp F14     &kp F15     &kp F16     &kp F17     &kp F18     &kp F19     &kp F20     &kp F21     &kp F22       &kp F23       &kp F24
+&bt BT_CLR   &bt BTS(0)  &bt BTS(1)  &bt BTS(2)  &bt BTS(3)  &bt BTS(4)  &bt BTD(0)  &bt BTD(1)  &bt BTD(2)  &bt BTD(3)    &bt BTD(4)    &out OUT_TOG
+&bootloader  &trans      &trans      CURR_L      DIS_L       &trans      &trans      DIS_L       &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
             >;
         };
     };
