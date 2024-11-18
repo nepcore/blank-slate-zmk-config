@@ -95,10 +95,10 @@
         us_func_layer {
             label = "Function US";
             bindings = <
-&kp F1           &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10       &kp F11       &kp F12
-&kp F13          &kp F14     &kp F15     &kp F16     &kp F17     &kp F18     &kp F19     &kp F20     &kp F21     &kp F22       &kp F23       &kp F24
-&bt BT_CLR       &bt BTS(0)  &bt BTS(1)  &bt BTS(2)  &bt BTS(3)  &bt BTS(4)  &bt BTD(0)  &bt BTD(1)  &bt BTD(2)  &bt BTD(3)    &bt BTD(4)    &out OUT_TOG
-&&studio_unlock  &trans      &trans      CURR_L      DIS_L       &trans      &trans      DIS_L       &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
+&kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10       &kp F11       &kp F12
+&kp F13         &kp F14     &kp F15     &kp F16     &kp F17     &kp F18     &kp F19     &kp F20     &kp F21     &kp F22       &kp F23       &kp F24
+&bt BT_CLR      &bt BTS(0)  &bt BTS(1)  &bt BTS(2)  &bt BTS(3)  &bt BTS(4)  &bt BTD(0)  &bt BTD(1)  &bt BTD(2)  &bt BTD(3)    &bt BTD(4)    &out OUT_TOG
+&studio_unlock  &trans      &trans      CURR_L      DIS_L       &trans      &trans      DIS_L       &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
             >;
         };
 
@@ -145,10 +145,10 @@
         de_func_layer {
             label = "Function DE";
             bindings = <
-&kp F1           &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10       &kp F11       &kp F12
-&kp F13          &kp F14     &kp F15     &kp F16     &kp F17     &kp F18     &kp F19     &kp F20     &kp F21     &kp F22       &kp F23       &kp F24
-&bt BT_CLR       &bt BTS(0)  &bt BTS(1)  &bt BTS(2)  &bt BTS(3)  &bt BTS(4)  &bt BTD(0)  &bt BTD(1)  &bt BTD(2)  &bt BTD(3)    &bt BTD(4)    &out OUT_TOG
-&&studio_unlock  &trans      &trans      CURR_L      DIS_L       &trans      &trans      DIS_L       &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
+&kp F1          &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10       &kp F11       &kp F12
+&kp F13         &kp F14     &kp F15     &kp F16     &kp F17     &kp F18     &kp F19     &kp F20     &kp F21     &kp F22       &kp F23       &kp F24
+&bt BT_CLR      &bt BTS(0)  &bt BTS(1)  &bt BTS(2)  &bt BTS(3)  &bt BTS(4)  &bt BTD(0)  &bt BTD(1)  &bt BTD(2)  &bt BTD(3)    &bt BTD(4)    &out OUT_TOG
+&studio_unlock  &trans      &trans      CURR_L      DIS_L       &trans      &trans      DIS_L       &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY
             >;
         };
     };
