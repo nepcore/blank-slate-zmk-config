@@ -22,6 +22,7 @@
 #define DE_RAISE_L 7
 #define DE_SPECIAL_L 8
 #define DE_FUNC_L 9
+#define NAV_L 10
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -87,7 +88,7 @@
             label = "Special US";
             bindings = <
 &tog DE_BASE_L  &kp EN_A_UMLAUT  &none           &kp EN_EURO     &none            &none   &kp EN_U_UMLAUT  &kp EN_U_UMLAUT  &none           &kp EN_O_UMLAUT  &kp EN_O_UMLAUT  &bootloader
-&trans          &kp EN_A_UMLAUT  &kp EN_SZ       &mmv MOVE_UP    &mkp LCLK        &none   &none            &mkp RCLK        &msc SCRL_UP    &none            &none            &none
+&trans          &kp EN_A_UMLAUT  &kp EN_SZ       &mmv MOVE_UP    &mkp LCLK        &none   &none            &mkp RCLK        &msc SCRL_UP    &none            &none            &tog NAV_L
 &trans          &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &none            &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_RIGHT  &none            &trans
 &trans          &trans           &trans          DIS_L           CURR_L           &trans  &trans           CURR_L           &trans          &trans           &trans           &trans
             >;
@@ -137,7 +138,7 @@
             label = "Special DE";
             bindings = <
 &tog DE_BASE_L  &kp DE_A_UMLAUT  &none           &kp DE_EURO     &none            &none   &kp DE_U_UMLAUT  &kp DE_U_UMLAUT  &none           &kp DE_O_UMLAUT  &kp DE_O_UMLAUT  &bootloader
-&trans          &kp DE_A_UMLAUT  &kp DE_SZ       &mmv MOVE_UP    &mkp LCLK        &none   &none            &mkp RCLK        &msc SCRL_UP    &none            &none            &none
+&trans          &kp DE_A_UMLAUT  &kp DE_SZ       &mmv MOVE_UP    &mkp LCLK        &none   &none            &mkp RCLK        &msc SCRL_UP    &none            &none            &tog NAV_L
 &trans          &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &none            &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_RIGHT  &none            &trans
 &trans          &trans           &trans          DIS_L           CURR_L           &trans  &trans           CURR_L           &trans          &trans           &trans           &trans
             >;
@@ -150,6 +151,16 @@
 &kp C_AL_IMAGES  &kp C_AL_HELP  &kp C_AL_CAL  &kp C_AL_DOCS  &kp C_AL_FILES  &kp C_AL_DB  &kp C_AL_WORD  &kp C_AL_MOVIES  &kp C_AL_AUDIO  &kp C_AL_NEWS  &kp C_AL_SPELL  &kp C_AL_CALC
 &bt BT_CLR       &bt BTS(0)     &bt BTS(1)    &bt BTS(2)     &bt BTS(3)      &bt BTS(4)   &bt BTD(0)     &bt BTD(1)       &bt BTD(2)      &bt BTD(3)     &bt BTD(4)      &out OUT_TOG
 &studio_unlock   &trans         &sys_reset    CURR_L         DIS_L           &trans       &trans         DIS_L            &kp C_NEXT      &kp C_VOL_DN   &kp C_VOL_UP    &kp C_PLAY
+            >;
+        };
+
+        nav_layer {
+            label = "Navigation";
+            bindings = <
+&trans  &mkp RCLK       &mmv MOVE_UP    &mkp LCLK        &msc SCRL_UP    &kp PG_UP  &none      &kp UP    &none      &none   &none   &tog NAV_L
+&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &kp PG_DN  &kp LEFT   &kp DOWN  &kp RIGHT  &none   &none   &none
+&trans  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none           &none      &none      &none     &none      &none   &none   &trans
+&trans  &trans          &trans          DIS_L            DIS_L           &mkp LCLK  &mkp RCLK  DIS_L     &trans     &trans  &trans  &trans
             >;
         };
     };
